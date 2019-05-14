@@ -2,9 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var cleanCSS = require('gulp-clean-css');
-var connect = require('gulp-connect-php');
-var browserSync = require('browser-sync');
+let cleanCSS = require('gulp-clean-css');
 
 gulp.task('scss', function() {
   return gulp
@@ -12,8 +10,7 @@ gulp.task('scss', function() {
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(concat('main.min.css'))
-    .pipe(gulp.dest('./dist/css'))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('js', function() {
@@ -26,29 +23,15 @@ gulp.task('js', function() {
     ])
     .pipe(concat('index.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./dist/js'))
-    .pipe(browserSync.stream());
-});
-
-gulp.task('connect-sync', function() {
-  connect.server({}, function() {
-    browserSync({
-      proxy: 'localhost/wordpress'
-    });
-  });
+    .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task(
   'watch',
-  gulp.series(['scss', 'js', 'connect-sync'], function() {
-    browserSync.init({
-      server: ''
-    });
-
+  gulp.series(['scss', 'js'], function() {
     gulp.watch('./src/scss/**/*.scss', gulp.series(['scss']));
     gulp.watch('./src/js/**/*.js', gulp.series(['js']));
-    gulp.watch('**/*.php').on('change', browserSync.reload);
   })
 );
 
-gulp.task('default', gulp.series(['scss', 'js', 'connect-sync', 'watch']));
+gulp.task('default', gulp.series(['scss', 'js', 'watch']));
