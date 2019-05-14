@@ -2,7 +2,9 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-let cleanCSS = require('gulp-clean-css');
+var cleanCSS = require('gulp-clean-css');
+var connect = require('gulp-connect-php');
+var browserSync = require('browser-sync');
 
 gulp.task('scss', function() {
   return gulp
@@ -16,9 +18,9 @@ gulp.task('scss', function() {
 gulp.task('js', function() {
   return gulp
     .src([
-      'node_modules/bootstrap/dist/js/bootstrap.min.js',
       'node_modules/jquery/dist/jquery.min.js',
       'node_modules/popper.js/dist/umd/popper.min.js',
+      'node_modules/bootstrap/dist/js/bootstrap.min.js',
       './src/**/*.js'
     ])
     .pipe(concat('index.min.js'))
@@ -34,4 +36,16 @@ gulp.task(
   })
 );
 
-gulp.task('default', gulp.series(['scss', 'js', 'watch']));
+gulp.task('connect-sync', function() {
+  connect.server({}, function() {
+    browserSync({
+      proxy: 'localhost/wordpress'
+    });
+  });
+
+  gulp.watch('**/*.php').on('change', function() {
+    browserSync.reload();
+  });
+});
+
+gulp.task('default', gulp.series(['scss', 'js', 'connect-sync', 'watch']));
