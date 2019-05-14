@@ -7,4 +7,6 @@
 </head>
 <body>
   
-<p>This is header</p>
+<p>header.php</p>
+
+<?php wp_nav_menu( array( 'theme_location' => 'about' ) ); ?>

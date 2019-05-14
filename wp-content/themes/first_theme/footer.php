@@ -1,4 +1,4 @@
 
-<p>This is footer</p>
+<p>footer.php</p>
 </body>
 </html>
