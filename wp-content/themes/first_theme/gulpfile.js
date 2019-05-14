@@ -6,16 +6,21 @@ let cleanCSS = require('gulp-clean-css');
 
 gulp.task('scss', function() {
   return gulp
-    .src('./src/scss/**/*.scss')
-    .pipe(concat('main.min.scss'))
+    .src(['node_modules/bootstrap/scss/bootstrap.scss', './src/scss/**/*.scss'])
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(concat('main.min.css'))
     .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('js', function() {
   return gulp
-    .src('./src/**/*.js')
+    .src([
+      'node_modules/bootstrap/dist/js/bootstrap.min.js',
+      'node_modules/jquery/dist/jquery.min.js',
+      'node_modules/popper.js/dist/umd/popper.min.js',
+      './src/**/*.js'
+    ])
     .pipe(concat('index.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./dist/js'));
