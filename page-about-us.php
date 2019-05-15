@@ -7,15 +7,28 @@
 
 get_header(); ?>
 
+
 <h1><?php the_title(); ?></h1>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-9">
+      <?php while ( have_posts() ) : the_post(); ?>
+        <?php the_content(); ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
-  <?php the_content(); ?>
+      <?php
+        endwhile;
+        wp_reset_query();
+      ?>
+    </div>
 
-<?php
-  endwhile;
-  wp_reset_query();
-?>
+
+    <div class="col-3">
+      <?php
+        get_sidebar('right');
+      ?>
+    </div>
+  </div>
+</div>
 
 <?php get_footer(); ?>
