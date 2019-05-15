@@ -21,6 +21,24 @@ endif;
 
 ?>
 
+<?php
+
+$images = get_field('galeria_strony_glownej');
+$size = 'full'; // (thumbnail, medium, large, full or custom size)
+
+if( $images ): ?>
+    <ul>
+        <?php foreach( $images as $image ): ?>
+            <li>
+                <a href="<?php echo $image['url']; ?>">
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="500"/>
+                </a>
+                <p><?php echo $image['caption']; ?></p>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
+
 
 <?php while ( have_posts() ) : the_post(); ?>
   <?php the_content(); ?>
