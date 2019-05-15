@@ -20,4 +20,24 @@ function site_setup() {
 add_action('wp_enqueue_scripts', 'site_setup');
 
 
+
+
+function widget_setup() {
+  register_sidebar(
+    array(
+      'name' => 'Sidebar',
+      'id' => 'about-us-sidebar',
+      'class' => 'custom',
+      'description' => 'Sidebar na stronie o nas',
+      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</aside>',
+      'before_title'  => '<h2 class="widgettitle">',
+      'after_title'   => '</h2>'
+
+    )
+  );
+}
+
+add_action('widgets_init', 'widget_setup');
+
 ?>
