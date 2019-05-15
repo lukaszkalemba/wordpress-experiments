@@ -12,8 +12,11 @@
 
 <p>header.php</p>
 
+
 <nav>
 
-  <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+  <?php wp_nav_menu( array( 
+      'theme_location' => 'main_nav'
+  ) ); ?>
 
 </nav>
