@@ -40,4 +40,7 @@ function widget_setup() {
 
 add_action('widgets_init', 'widget_setup');
 
+
+
+add_theme_support('post-thumbnails');
 ?>
