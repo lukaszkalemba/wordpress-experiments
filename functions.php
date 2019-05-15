@@ -43,4 +43,8 @@ add_action('widgets_init', 'widget_setup');
 
 
 add_theme_support('post-thumbnails');
+
+
+
+add_image_size( 'post-thumbnail-size', 400, 250 );
 ?>
