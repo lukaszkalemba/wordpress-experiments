@@ -13,6 +13,7 @@ add_action( 'init', 'register_menus' );
 
 
 function site_setup() {
+  wp_enqueue_style('fontawesome', '//use.fontawesome.com/releases/v5.1.0/css/all.css');
   wp_enqueue_style('style', get_theme_file_uri('/dist/css/main.min.css'));
   wp_enqueue_script('js', get_theme_file_uri('/dist/js/index.min.js'), NULL,  microtime(), true);
 }

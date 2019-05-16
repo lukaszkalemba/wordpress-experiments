@@ -16,6 +16,8 @@ get_header(); ?>
   }
 ?>
 
+<i class="fas fa-mobile-alt"></i>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-9">
