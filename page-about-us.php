@@ -7,6 +7,8 @@
 
 get_header(); ?>
 
+<div class="container-fluid px-5 my-5">
+
 
 <h1><?php the_title(); ?></h1>
 
@@ -16,9 +18,9 @@ get_header(); ?>
   }
 ?>
 
-<i class="fas fa-mobile-alt"></i>
+</div>
 
-<div class="container-fluid">
+<div class="container-fluid px-5 my-5">
   <div class="row">
     <div class="col-9">
       <?php while ( have_posts() ) : the_post(); ?>
@@ -30,6 +32,10 @@ get_header(); ?>
       ?>
     </div>
 
+    <section class="team">
+
+    </section>
+
 
     <div class="col-3">
       <?php
@@ -38,5 +44,10 @@ get_header(); ?>
     </div>
   </div>
 </div>
+
+
+<i class="fas fa-mobile-alt"></i>
+<i class="far fa-envelope"></i>
+
 
 <?php get_footer(); ?>

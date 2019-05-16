@@ -10,10 +10,12 @@
 </head>
 <body>
 
-<p>header.php</p>
+<header class="header py-3">
+  <p class="header__desc">An awesome header</p>
+</header>
 
 
-<nav>
+<nav class="nav">
 
   <?php wp_nav_menu( array( 
       'theme_location' => 'main_nav'

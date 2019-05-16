@@ -4,10 +4,47 @@ body {
   font-family: sans-serif;
 }
 
-a {
-  color: white;
-}
-
 h1 {
   font-family: 'Montserrat';
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__desc,
+.header__desc {
+  text-align: center;
+  margin: 0;
+}
+
+.nav {
+  .menu-header-menu-container {
+    width: 100%;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    background-color: hsl(10, 80%, 50%);
+    padding: 0.6em;
+
+    li {
+      list-style-type: none;
+    }
+  }
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: hsl(0, 0%, 100%);
+  }
 }
