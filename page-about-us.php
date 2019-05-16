@@ -49,13 +49,19 @@ get_header(); ?>
   if( have_rows('czlonek_zespolu') ):
       while ( have_rows('czlonek_zespolu') ) : the_row(); ?>
 
-      <article class="team_member">
+      <article class="team__member">
 
-        <img src="<?php the_sub_field('zdjecie'); ?>" alt="">
-        <?php the_sub_field('imie_i_nazwisko'); ?>
-        <?php the_sub_field('stanowisko'); ?>
-        <?php the_sub_field('telefon'); ?>
-        <?php the_sub_field('adres_pocztowy'); ?>
+      <div class="member__image">
+        <?php $image_url = get_sub_field('zdjecie')['sizes']['medium']; ?>
+        <img class="member__img" src="<?php echo $image_url ?>" alt="">
+      </div>
+
+      <div class="member__info">
+        <p class="member__paragraph member__paragraph--name"><?php the_sub_field('imie_i_nazwisko'); ?></p>
+        <p class="member__paragraph member__paragraph--workplace"><?php the_sub_field('stanowisko'); ?></p>
+        <p class="member__paragraph member__paragraph--phone-number"><i class="member__icon member__icon--mobile fas fa-mobile-alt"></i><?php the_sub_field('telefon'); ?></p>
+        <p class="member__paragraph member__paragraph--email"><i class="member__icon far fa-envelope"></i><?php the_sub_field('adres_pocztowy'); ?></p>
+      </div>
 
       </article>
 
@@ -68,8 +74,6 @@ get_header(); ?>
 </section>
 
 
-<i class="fas fa-mobile-alt"></i>
-<i class="far fa-envelope"></i>
 
 
 <?php get_footer(); ?>
