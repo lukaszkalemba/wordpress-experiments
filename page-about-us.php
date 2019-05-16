@@ -32,11 +32,6 @@ get_header(); ?>
       ?>
     </div>
 
-    <section class="team">
-
-    </section>
-
-
     <div class="col-3">
       <?php
         get_sidebar('right');
@@ -44,6 +39,33 @@ get_header(); ?>
     </div>
   </div>
 </div>
+
+
+<section class="team px-5 my-5">
+
+  <h2>Nasz zespół</h2>
+  <?php
+
+  if( have_rows('czlonek_zespolu') ):
+      while ( have_rows('czlonek_zespolu') ) : the_row(); ?>
+
+      <article class="team_member">
+
+        <img src="<?php the_sub_field('zdjecie'); ?>" alt="">
+        <?php the_sub_field('imie_i_nazwisko'); ?>
+        <?php the_sub_field('stanowisko'); ?>
+        <?php the_sub_field('telefon'); ?>
+        <?php the_sub_field('adres_pocztowy'); ?>
+
+      </article>
+
+  <?php
+    endwhile;
+  else :
+  endif;
+
+  ?>
+</section>
 
 
 <i class="fas fa-mobile-alt"></i>
