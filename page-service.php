@@ -23,7 +23,7 @@ get_header(); ?>
   <p class="service__row"><span class="service__desc"><i class="service__icon far fa-user"></i> Osoba wykonująca usługę: </span><?php the_field('osoba_wykonujaca_usluge'); ?></p>
 
   <div class="mt-4">
-  <?php while ( have_posts() ) : the_post(); ?>
+    <?php while ( have_posts() ) : the_post(); ?>
     <?php the_content(); ?>
 
   <?php
@@ -109,7 +109,7 @@ get_header(); ?>
 ?>
 
 <div class="container-fluid--button container-fluid px-5 my-5">
-  <button class="service__button"><a class="service__link" href="<?php the_permalink(); ?>">Wszystkie usługi <i class="button__icon fas fa-arrow-right"></i></a></button>
+  <a class="service__link" href="<?php the_permalink("197"); ?>"><button class="service__button">Wszystkie usługi <i class="button__icon fas fa-arrow-right"></i></button></a>
 </div>
 
 <?php get_footer(); ?>

@@ -140,26 +140,25 @@ h1 {
   justify-content: center;
 }
 
-.service__button {
-  all: unset;
-  border: 1px solid hsl(37, 90%, 51%);
-  border-radius: 3px;
+.service__link {
   color: hsl(37, 90%, 51%);
-  padding: 0.7em 2em;
-  transition: all 250ms ease-in-out;
+  text-decoration: none;
 
   &:hover {
-    background-color: hsl(37, 90%, 51%);
+    color: hsl(0, 0%, 100%);
+    text-decoration: none;
 
-    .service__link {
-      color: hsl(0, 0%, 100%);
-      text-decoration: none;
+    .service__button {
+      background-color: hsl(37, 90%, 51%);
     }
   }
 
-  .service__link {
-    color: hsl(37, 90%, 51%);
-    text-decoration: none;
+  .service__button {
+    all: unset;
+    border: 1px solid hsl(37, 90%, 51%);
+    border-radius: 3px;
+    padding: 0.7em 2em;
+    transition: all 250ms ease-in-out;
   }
 }
 
@@ -181,6 +180,7 @@ h1 {
   .third-row__desc {
     transform: translateX(-50%);
     left: 50%;
+    text-shadow: 1px 1px 0 black;
   }
 
   .third-row__header {
