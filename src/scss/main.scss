@@ -106,3 +106,22 @@ h1 {
 .services__image {
   width: 100%;
 }
+
+.sub-menu {
+  flex-direction: column;
+}
+
+.service__row {
+  margin: 0;
+  font-size: 1.2em;
+  color: hsl(37, 90%, 51%);
+}
+
+.service__desc {
+  color: hsla(0, 0%, 100%, 0.75);
+}
+
+.service__icon {
+  margin-right: 0.25em;
+  color: hsl(37, 90%, 51%);
+}
