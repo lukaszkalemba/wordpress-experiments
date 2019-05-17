@@ -130,3 +130,75 @@ h1 {
   width: 100%;
   height: auto;
 }
+
+.service__header {
+  color: hsl(37, 90%, 51%);
+}
+
+.container-fluid--button {
+  display: flex;
+  justify-content: center;
+}
+
+.service__button {
+  all: unset;
+  border: 1px solid hsl(37, 90%, 51%);
+  border-radius: 3px;
+  color: hsl(37, 90%, 51%);
+  padding: 0.7em 2em;
+  transition: all 250ms ease-in-out;
+
+  &:hover {
+    background-color: hsl(37, 90%, 51%);
+
+    .service__link {
+      color: hsl(0, 0%, 100%);
+      text-decoration: none;
+    }
+  }
+
+  .service__link {
+    color: hsl(37, 90%, 51%);
+    text-decoration: none;
+  }
+}
+
+.button__icon {
+  margin-left: 0.5em;
+}
+
+.third-row {
+  position: relative;
+  height: 110vh;
+
+  .third-row__header,
+  .third-row__desc,
+  .third-row__image {
+    position: absolute;
+  }
+
+  .third-row__header,
+  .third-row__desc {
+    transform: translateX(-50%);
+    left: 50%;
+  }
+
+  .third-row__header {
+    font-size: 4em;
+    top: 10%;
+    font-weight: 500;
+  }
+
+  .third-row__desc {
+    font-size: 1.5em;
+    top: 22%;
+    text-align: center;
+    line-height: 1.65em;
+  }
+
+  .third-row__image {
+    top: 0;
+    left: 0;
+    filter: grayscale(100%) brightness(30%);
+  }
+}

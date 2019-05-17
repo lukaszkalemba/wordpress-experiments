@@ -47,13 +47,13 @@ get_header(); ?>
 <div class="container-fluid px-5 my-5">
   <div class="row">
     <div class="col">
-      <h2><?php the_sub_field('naglowek');?></h2>
+      <h2 class="service__header"><?php the_sub_field('naglowek');?></h2>
       <p><?php the_sub_field('tekst'); ?></p>
     </div>
 
     <div class="col">
-      <?php $image_url = get_sub_field('zdjecie')['url']; ?>
-      <img class="" src="<?php echo $image_url ?>" alt="">
+    <?php $image_url = get_sub_field('zdjecie1')['url']; ?>
+      <img class="services__image" src="<?php echo $image_url ?>" alt="">
     </div>
   </div>
 
@@ -66,12 +66,12 @@ get_header(); ?>
 <div class="container-fluid px-5 my-5">
   <div class="row">
     <div class="col">
-      <?php $image_url = get_sub_field('zdjecie')['url']; ?>
-      <img class="" src="<?php echo $image_url ?>" alt="">
+    <?php $image_url1 = get_sub_field('zdjecie2')['url']; ?>
+      <img class="services__image" src="<?php echo $image_url1 ?>" alt="">
     </div>
 
     <div class="col">
-      <h2><?php the_sub_field('naglowek');?></h2>
+      <h2 class="service__header"><?php the_sub_field('naglowek');?></h2>
       <p><?php the_sub_field('tekst'); ?></p>
     </div>
   </div>
@@ -81,11 +81,13 @@ get_header(); ?>
 <?php
     elseif( get_row_layout() == 'wiersz3' ):
     ?>
-  <div class="container-fluid px-5 my-5">
-    <h2><?php the_sub_field('naglowek');?></h2>
-    <p><?php the_sub_field('tekst'); ?></p>
-    <?php $image_url = get_sub_field('zdjecie')['url']; ?>
-    <img class="" src="<?php echo $image_url ?>" alt="">
+  <div class="third-row container-fluid px-5 my-5">
+    <?php $image_url2 = get_sub_field('zdjecie3')['url']; ?>
+    <img  class="third-row__image services__image" src="<?php echo $image_url2 ?>" alt="">
+    <div class="container">
+      <h2 class="third-row__header service__header"><?php the_sub_field('naglowek');?></h2>
+      <p class="third-row__desc"><?php the_sub_field('tekst'); ?></p>
+    </div>
 </div>
 
 
@@ -106,5 +108,8 @@ get_header(); ?>
 
 ?>
 
+<div class="container-fluid--button container-fluid px-5 my-5">
+  <button class="service__button"><a class="service__link" href="<?php the_permalink(); ?>">Wszystkie usługi <i class="button__icon fas fa-arrow-right"></i></a></button>
+</div>
 
 <?php get_footer(); ?>
