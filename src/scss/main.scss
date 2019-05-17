@@ -202,3 +202,20 @@ h1 {
     filter: grayscale(100%) brightness(30%);
   }
 }
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.col > * {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services__desc {
+  font-size: 2em;
+  text-align: center;
+  margin: 0.4em 0;
+}

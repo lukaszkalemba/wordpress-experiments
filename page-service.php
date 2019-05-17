@@ -109,7 +109,7 @@ get_header(); ?>
 ?>
 
 <div class="container-fluid--button container-fluid px-5 my-5">
-  <a class="service__link" href="<?php the_permalink("197"); ?>"><button class="service__button">Wszystkie usługi <i class="button__icon fas fa-arrow-right"></i></button></a>
+  <a class="service__link" href="<?php the_permalink(197); ?>"><button class="service__button">Wszystkie usługi <i class="button__icon fas fa-arrow-right"></i></button></a>
 </div>
 
 <?php get_footer(); ?>
