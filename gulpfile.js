@@ -26,6 +26,12 @@ gulp.task('js', function() {
     .pipe(gulp.dest('./dist/js'));
 });
 
+gulp.task('fonts', function() {
+  return gulp
+    .src('node_modules/font-awesome/fonts/*')
+    .pipe(gulp.dest('dist/fonts'));
+});
+
 gulp.task(
   'watch',
   gulp.series(['scss', 'js'], function() {
@@ -34,4 +40,4 @@ gulp.task(
   })
 );
 
-gulp.task('default', gulp.series(['scss', 'js', 'watch']));
+gulp.task('default', gulp.series(['scss', 'js', 'fonts', 'watch']));
