@@ -48,5 +48,4 @@ add_theme_support('post-thumbnails');
 
 
 add_image_size( 'post-thumbnail-size', 400, 250 );
-add_image_size( 'employee', 150, 150 );
 ?>
